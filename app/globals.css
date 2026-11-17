@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-display), Georgia, serif;
+  --color-teal: #00a0a0;
+  --color-purple: #3b1253;
+  --color-orange: #e16520;
+  --color-magenta: #d3286b;
+  --color-note: #c62828;
+  --color-blush: #e056a0;
+  --color-grad: #1d4ed8;
+  --color-moss: #5f7340;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #2a1040;
+  --card: #ffffff;
+  --card-foreground: #2a1040;
+  --popover: #ffffff;
+  --popover-foreground: #2a1040;
+  --primary: #00838a;
+  --primary-foreground: #ffffff;
+  --secondary: #f6eefb;
+  --secondary-foreground: #3b1253;
+  --muted: #f7f3f8;
+  --muted-foreground: #6d5a78;
+  --accent: #fff1e8;
+  --accent-foreground: #c2410c;
+  --destructive: #c81e4a;
+  --border: #eadff0;
+  --input: #e6d9ee;
+  --ring: #d3286b;
+  --chart-1: #00a0a0;
+  --chart-2: #3b1253;
+  --chart-3: #e16520;
+  --chart-4: #d3286b;
+  --chart-5: #0c6e78;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2a1040;
+  --sidebar-primary: #3b1253;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f6eefb;
+  --sidebar-accent-foreground: #3b1253;
+  --sidebar-border: #eadff0;
+  --sidebar-ring: #00a0a0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(920px 520px at -8% -12%, color-mix(in srgb, #00a0a0 20%, transparent), transparent 60%),
+      radial-gradient(840px 500px at 110% -10%, color-mix(in srgb, #3b1253 16%, transparent), transparent 56%),
+      radial-gradient(760px 520px at 105% 110%, color-mix(in srgb, #d3286b 18%, transparent), transparent 50%),
+      radial-gradient(680px 460px at -12% 108%, color-mix(in srgb, #e16520 16%, transparent), transparent 48%);
+    background-attachment: fixed;
+  }
+}
+
+/* Next's dev badge is a floating control. It must not cover a guest name. */
+nextjs-portal {
+  display: none !important;
+}
+
+@media print {
+  header,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+  }
+}
